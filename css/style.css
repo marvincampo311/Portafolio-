@@ -173,21 +173,22 @@ body {
 /* SECCIÓN SOBRE MÍ */
 .sobre-mi {
     max-width: 1100px;
-    margin: 100px auto;
+    margin: 50px auto;
     padding: 0 20px;
     text-align: center;
-    margin-top: 200px;
 }
 
 .section-subtitle {
     color: var(--text-dim);
     font-size: 0.9rem;
-    margin-bottom: 5px;
 }
 
 .section-title {
     font-size: 2.5rem;
     margin-bottom: 50px;
+    display: block;
+    /* Asegura que ocupe su propia línea */
+    width: 100%;
 }
 
 /* GRID BENTO */
@@ -201,12 +202,15 @@ body {
 .about-card {
     background: var(--card-bg);
     border: 1px solid var(--border);
-    border-radius: 30px;
-    padding: 35px 20px;
+    border-radius: 25px;
+    padding: 20px 15px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     transition: all 0.3s ease;
+    min-height: 220px;
+
 }
 
 .about-card:hover {
@@ -232,16 +236,16 @@ body {
 }
 
 .card-title {
-    font-size: 1rem;
-    margin-bottom: 10px;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
     font-weight: 600;
 }
 
 .card-desc {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: var(--text-dim);
-    margin-bottom: 20px;
-    line-height: 1.4;
+    margin-bottom: 15px;
+    line-height: 1.3;
 }
 
 /* BOTÓN TIPO PÍLDORA */
@@ -263,11 +267,13 @@ body {
 /* DESCRIPCIÓN FINAL */
 .about-description {
     max-width: 900px;
-    margin: 50px auto 0;
-    text-align: left;
-    line-height: 1.8;
+    margin: 30px auto 0;
+    text-align: center;
+    line-height: 1.6;
     color: var(--text-dim);
-    font-size: 1.1rem;
+    font-size: 1rem;
+    margin-bottom: 50px;
+
 }
 
 .about-description span {
@@ -292,6 +298,70 @@ body {
     }
 }
 
+
+.habilidades {
+    max-width: 1100px;
+    margin: 80px auto;
+    padding: 0 20px;
+    text-align: center;
+
+}
+
+.skills-grid {
+    display: grid;
+    /* Esto crea columnas que se ajustan solas según el tamaño de la pantalla */
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    margin-top: 40px;
+}
+
+.skill-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    /* Redondeado elegante pero más pequeño */
+    padding: 25px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-5px);
+    background: #1a1a1a;
+    /* Un tono un poco más claro al pasar el mouse */
+}
+
+.skill-icon {
+    font-size: 2.2rem;
+}
+
+.skill-card span {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-dim);
+}
+
+.skill-card:hover span {
+    color: white;
+}
+
 html {
     scroll-behavior: smooth;
+}
+
+/* Ajusta el espacio para todas las secciones que tengan un ID */
+section[id] {
+    scroll-margin-top: 50px;
+    /* Ajusta este número según el alto de tu Navbar */
+}
+
+/* Si quieres que se vea aún más profesional, dales un espacio de respiro */
+.sobre-mi,
+.habilidades {
+    padding-top: 40px;
+    padding-bottom: 80px;
 }
