@@ -173,8 +173,9 @@ body {
 /* SECCIÓN SOBRE MÍ */
 .sobre-mi {
     max-width: 1100px;
-    margin: 50px auto;
-    padding: 0 20px;
+    margin: 40px auto;
+    padding-top: 20px;
+    padding-bottom: 40px;
     text-align: center;
 }
 
@@ -355,52 +356,58 @@ html {
 
 /* Ajusta el espacio para todas las secciones que tengan un ID */
 section[id] {
-    scroll-margin-top: 50px;
+    scroll-margin-top: 40px;
     /* Ajusta este número según el alto de tu Navbar */
 }
 
 /* Si quieres que se vea aún más profesional, dales un espacio de respiro */
 .sobre-mi,
-.habilidades {
-    padding-top: 40px;
-    padding-bottom: 80px;
+.habilidades,
+.proyectos {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    min-height: 80vh;
 }
 
+/* SECCIÓN PROYECTOS COMPACTA */
 .proyectos {
-    max-width: 1100px;
-    margin: 80px auto;
+    max-width: 1200px;
+    /* Un poco más ancho para las 3 columnas */
+    margin: 50px auto;
     padding: 0 20px;
     text-align: center;
 }
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    /* Dos columnas para proyectos */
-    gap: 25px;
-    margin-top: 40px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 50px;
+
 }
 
 .project-card {
     background: var(--card-bg);
     border: 1px solid var(--border);
-    border-radius: 30px;
+    border-radius: 20px;
+    /* Bordes más finos y elegantes */
     overflow: hidden;
-    /* Para que la imagen no se salga de los bordes redondeados */
     text-align: left;
     transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .project-card:hover {
     border-color: #444;
-    transform: translateY(-8px);
+    transform: translateY(-5px);
 }
 
 .project-image {
     width: 100%;
-    height: 220px;
-    background: #252525;
-    /* Fondo mientras carga la imagen */
+    height: 150px;
+    /* Altura reducida para que quepa más info */
+    background: #1a1a1a;
     overflow: hidden;
 }
 
@@ -411,63 +418,79 @@ section[id] {
     transition: transform 0.5s ease;
 }
 
-.project-card:hover .project-image img {
-    transform: scale(1.05);
-}
-
 .project-info {
-    padding: 25px;
+    padding: 15px;
+    /* Padding más compacto */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .project-tags {
     display: flex;
-    gap: 8px;
-    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 10px;
 }
 
 .tag {
     background: #1a1a1a;
     border: 1px solid var(--border);
     color: var(--text-dim);
-    font-size: 0.75rem;
-    padding: 4px 12px;
-    border-radius: 15px;
+    font-size: 0.65rem;
+    /* Fuente más pequeña */
+    padding: 2px 10px;
+    border-radius: 12px;
 }
 
 .project-info h3 {
-    font-size: 1.4rem;
-    margin-bottom: 10px;
+    font-size: 1.1rem;
+    /* Título equilibrado */
+    margin-bottom: 8px;
+    color: white;
 }
 
 .project-info p {
     color: var(--text-dim);
-    font-size: 0.9rem;
-    line-height: 1.5;
-    margin-bottom: 20px;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    margin-bottom: 15px;
+    /* Cortar texto a 2 líneas para uniformidad */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .project-links {
     display: flex;
-    gap: 15px;
+    gap: 10px;
 }
 
-/* Reutilizamos el estilo de tus botones pill pero adaptados */
 .project-links .btn-pill {
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    flex: 1;
+    /* Los botones se dividen el ancho */
+    text-align: center;
+    justify-content: center;
     display: flex;
     align-items: center;
-    gap: 8px;
-    background: transparent;
+    gap: 5px;
 }
 
-.project-links .btn-pill:hover {
-    background: white;
-    color: black;
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columnas en tablets */
+    }
 }
 
-/* Responsive para Proyectos */
-@media (max-width: 850px) {
+@media (max-width: 650px) {
     .projects-grid {
         grid-template-columns: 1fr;
-        /* Una columna en tablets y móviles */
+        /* 1 columna en celulares */
     }
 }
