@@ -480,6 +480,94 @@ section[id] {
     gap: 5px;
 }
 
+
+.contacto {
+    max-width: 1100px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+.contacto-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    /* Columna de info pequeña y formulario ancho */
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* Tarjetas de Información Izquierda */
+.contacto-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.info-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.info-card i {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.info-card h3 {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.info-card p {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+}
+
+/* Estilo del Formulario */
+.contacto-form {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 30px;
+    border-radius: 30px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.contacto-form input,
+.contacto-form textarea {
+    width: 100%;
+    padding: 15px;
+    background: #0d0d0d;
+    /* Fondo más oscuro para los inputs */
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    color: white;
+    font-family: inherit;
+    outline: none;
+}
+
+.contacto-form input:focus,
+.contacto-form textarea:focus {
+    border-color: white;
+}
+
+.contacto-form .btn-filled {
+    width: 100%;
+    cursor: pointer;
+}
+
+/* Ajuste Responsive */
+@media (max-width: 768px) {
+    .contacto-container {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* RESPONSIVE */
 @media (max-width: 1024px) {
     .projects-grid {
