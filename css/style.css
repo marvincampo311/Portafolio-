@@ -562,6 +562,71 @@ section[id] {
     cursor: pointer;
 }
 
+/* --- FOOTER STYLES --- */
+.main-footer {
+    padding: 60px 20px 30px;
+    border-top: 1px solid var(--border);
+    background: linear-gradient(to bottom, transparent, #0a0a0a);
+    margin-top: 100px;
+    text-align: center;
+}
+
+.footer-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.footer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 25px 0;
+}
+
+.footer-socials a {
+    color: var(--text-dim);
+    font-size: 1.4rem;
+    transition: all 0.3s ease;
+}
+
+.footer-socials a:hover {
+    color: white;
+    transform: translateY(-5px);
+}
+
+.footer-bottom {
+    margin-top: 40px;
+    border-top: 1px solid #1a1a1a;
+    padding-top: 20px;
+    font-size: 0.8rem;
+    color: #444;
+}
+
+/* --- MICRO-INTERACCIONES (GLOW EFFECT) --- */
+
+/* Brillo sutil al pasar el mouse por las tarjetas Bento */
+.about-card:hover,
+.skill-card:hover,
+.project-card:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.03);
+    background: #1a1a1a;
+}
+
+/* Animación de entrada suave para las secciones */
+section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-out;
+}
+
+/* Esta clase se activará al cargar o con scroll */
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* Ajuste Responsive */
 @media (max-width: 768px) {
     .contacto-container {

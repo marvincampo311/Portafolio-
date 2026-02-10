@@ -235,6 +235,47 @@
     </section>
 
 
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-logo">Marvin Valencia</div>
+            <p>Desarrollador Full Stack enfocado en soluciones eficientes.</p>
+
+            <div class="footer-socials">
+                <a href="https://github.com/tu-usuario" target="_blank" title="GitHub">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/tu-usuario" target="_blank" title="LinkedIn">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="mailto:tu-email@correo.com" title="Email">
+                    <i class="fa-regular fa-envelope"></i>
+                </a>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Marvin Valencia. Casi todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Animación de aparición al hacer scroll
+        const sections = document.querySelectorAll('section');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+
+
     <main class="container">
     </main>
 
